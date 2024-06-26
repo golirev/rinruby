@@ -1011,7 +1011,7 @@ print('#{RinRuby_Eval_Flag}.#{run_num}')
         ['bin', 'bin/x64', 'bin/i386'].product(
             cygwin ? [path.gsub(' ','\ '), path] : [path.gsub('\\','/')]).each{|bin_dir, base_dir| 
           r_exe = File::join(base_dir, bin_dir, "Rterm.exe")
-          return %Q<"#{r_exe}"> if File.exists?(r_exe)
+          return %Q<"#{r_exe}"> if File.exist?(r_exe)
         }
       }
       raise "Cannot locate R executable"
